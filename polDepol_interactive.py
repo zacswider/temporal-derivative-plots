@@ -78,13 +78,13 @@ ax_button = fig.add_axes([0.82, 0.85, 0.08, 0.05])
 grid_button = Button(ax_button, 'Save', color='#cc7000', hovercolor='grey')
 
 # decorate the starting plot
-ax.set_ylabel('relative assembly and disassembly')
+ax.set_ylabel('relative signal gain and loss')
 ax.set_xlabel('time (frames)')
 xAxisDots, polDotVals, depolDotVals, xAxisRoll, polRoll, depolRoll = calcLines(scaled_img, diffNumber, windowSize)
 polDots, = ax.plot(xAxisDots, polDotVals, color='deepskyblue', marker='o', linestyle="", markersize=2, alpha=0.25)
 depolDots, = ax.plot(xAxisDots, depolDotVals, color='darkorange', marker='o', linestyle="", markersize=2, alpha=0.25)
-polLine, = ax.plot(xAxisRoll, polRoll, color='deepskyblue', label='total net F-actin assembly')
-depolLine, = ax.plot(xAxisRoll, depolRoll, color='darkorange', label='total net F-actin disassembly')
+polLine, = ax.plot(xAxisRoll, polRoll, color='deepskyblue', label='total net signal gain')
+depolLine, = ax.plot(xAxisRoll, depolRoll, color='darkorange', label='total net signal loss')
 ax.legend(loc='upper right', fontsize='small', frameon=False, ncol=1)
 
 # slider move and button push calls
